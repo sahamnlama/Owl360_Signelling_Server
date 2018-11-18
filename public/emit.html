@@ -32,7 +32,8 @@
 
         function loadCam(stream){
             logger("Camera loaded correctly");
-            video.src = window.URL.createObjectURL(stream);
+            //video.src = window.URL.createObjectURL(stream);
+            video.src = stream;
         }
 
         function loadFail(){
