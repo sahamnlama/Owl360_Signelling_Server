@@ -51,6 +51,11 @@ io.on('connection', function(socket){
     socket.on("new_description", function(data){
         socket.broadcast.emit("new_description", data);
     });
+    
+    socket.on('visitor_folder', function(data){
+        console.log(data);
+        socket.broadcast.emit('visitor_folder_list', data);
+    });
 });
 
 http.listen(port, function(){
