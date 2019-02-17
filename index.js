@@ -61,6 +61,11 @@ io.on('connection', function(socket){
         console.log(data);
         socket.broadcast.emit('visitor_folder_list', data);
     });
+    
+    socket.on('request_visitor_images', function(data){
+        console.log(data);
+        socket.broadcast.emit('request_visitor_images', data);
+    });
 });
 
 http.listen(port, function(){
