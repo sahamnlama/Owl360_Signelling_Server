@@ -26,6 +26,11 @@ io.on('connection', function(socket){
         socket.broadcast.emit('start_stream', data);
     });
     
+    socket.on('close_stream', function(data){
+        console.log(data);
+        socket.broadcast.emit('close_stream', data);
+    });
+    
     socket.on('stream', function(image){
        socket.broadcast.emit('stream', image);
     });
