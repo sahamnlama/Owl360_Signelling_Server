@@ -20,6 +20,12 @@ app.get('/video', function(req, res){
 });
 
 io.on('connection', function(socket){
+    
+    socket.on('start_stream', function(data){
+        console.log(data);
+        socket.broadcast.emit('start_stream', data);
+    });
+    
     socket.on('stream', function(image){
        socket.broadcast.emit('stream', image);
     });
