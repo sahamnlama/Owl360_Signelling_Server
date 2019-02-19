@@ -78,6 +78,14 @@ io.on('connection', function(socket){
      socket.on('visitor_image3', function(image){
         socket.broadcast.emit('visitor_image3', image);
      });
+    
+     socket.on('update_visitor_folder', function(data){
+        socket.broadcast.emit('update_visitor_folder', data);
+     });
+
+     socket.on('ack_update_visitor_folder', function(data){
+        socket.broadcast.emit('ack_update_visitor_folder', data);
+     });
 });
 
 http.listen(port, function(){
