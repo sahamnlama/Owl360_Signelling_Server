@@ -86,9 +86,16 @@ io.on('connection', function(socket){
      socket.on('ack_update_visitor_folder', function(data){
         socket.broadcast.emit('ack_update_visitor_folder', data);
      });
+   
+    
+     //Visitor push notification
+     socket.on('send_visitor_pushnotification', function(data){
+        socket.broadcast.emit('send_visitor_pushnotification', data);
+     });
 });
 
 http.listen(port, function(){
     log.info("Server listen through the port %s", port);
 });
+
 
