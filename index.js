@@ -66,6 +66,18 @@ io.on('connection', function(socket){
         console.log(data);
         socket.broadcast.emit('request_visitor_images', data);
     });
+    
+     socket.on('visitor_image1', function(image){
+        socket.broadcast.emit('visitor_image1', image);
+     });
+
+     socket.on('visitor_image2', function(image){
+        socket.broadcast.emit('visitor_image2', image);
+     });
+
+     socket.on('visitor_image3', function(image){
+        socket.broadcast.emit('visitor_image3', image);
+     });
 });
 
 http.listen(port, function(){
