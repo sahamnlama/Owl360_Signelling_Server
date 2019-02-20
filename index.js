@@ -94,10 +94,6 @@ io.on('connection', function(socket){
      });
     
     
-    //Visitor call push notification
-    socket.on('visitor_call_start', function(data){
-        socket.broadcast.emit('visitor_call_start_pushnotification', data);
-    });
 });
 
 http.listen(port, function(){
