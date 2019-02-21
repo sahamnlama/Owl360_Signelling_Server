@@ -102,6 +102,9 @@ io.on('connection', function(socket){
         socket.broadcast.emit('open_call_picamera', data);
     });
     
+    socket.on('close_video_chat', function(data){
+        socket.broadcast.emit('close_video_chat', data);
+    });
 });
 
 http.listen(port, function(){
