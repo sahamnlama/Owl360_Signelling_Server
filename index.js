@@ -98,6 +98,10 @@ io.on('connection', function(socket){
         socket.broadcast.emit('visitor_call_start_pushnotification', data);
     });
     
+    socket.on('open_call_picamera', function(data){
+        socket.broadcast.emit('open_call_picamera', data);
+    });
+    
 });
 
 http.listen(port, function(){
