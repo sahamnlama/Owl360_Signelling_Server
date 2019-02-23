@@ -105,6 +105,10 @@ io.on('connection', function(socket){
     socket.on('close_video_chat', function(data){
         socket.broadcast.emit('close_video_chat', data);
     });
+    
+    socket.on('train', function(data){
+        socket.broadcast.emit('train', data);
+    });
 });
 
 http.listen(port, function(){
